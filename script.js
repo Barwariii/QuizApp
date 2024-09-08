@@ -32,3 +32,8 @@ let questions = [
         "right_answer": 4
     },
 ];
+
+
+function init() {
+    document.getElementById('all_questions').innerHTML = questions.length;
+}
