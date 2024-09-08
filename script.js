@@ -75,8 +75,11 @@ function answer(selection) {
 function nextQ() {
     currentQuestion++; //z.B. von 0 auf 1
     showQuestion();
+    resetAnswerBtn();
+}
 
 
+function resetAnswerBtn() {
     document.getElementById('answer_1').parentNode.classList.remove('bg-success');
     document.getElementById('answer_1').parentNode.classList.remove('bg-danger');
     document.getElementById('answer_2').parentNode.classList.remove('bg-success');
