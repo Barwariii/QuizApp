@@ -47,6 +47,8 @@ function init() {
 function showQuestion() {
     let questionContainer = questions[currentQuestion];
 
+
+    document.getElementById('question_number').innerHTML = currentQuestion + 1;
     document.getElementById('questiontext').innerHTML = questionContainer['question'];
     document.getElementById('answer_1').innerHTML = questionContainer['answer_1'];
     document.getElementById('answer_2').innerHTML = questionContainer['answer_2'];
@@ -74,7 +76,7 @@ function nextQ() {
     currentQuestion++; //z.B. von 0 auf 1
     showQuestion();
 
-    
+
     document.getElementById('answer_1').parentNode.classList.remove('bg-success');
     document.getElementById('answer_1').parentNode.classList.remove('bg-danger');
     document.getElementById('answer_2').parentNode.classList.remove('bg-success');
