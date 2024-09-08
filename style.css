@@ -5,25 +5,36 @@ body {
 }
 
 .container {
-    height: 80vh;
+    /* height: 100% !important; */
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 24px;
+    /* flex: 1; */
+    /* flex-grow: 1; */
 }
 
 .quiz-card {
-    /* style="width: 18rem;" */
     display: flex;
     justify-content: center;
-    width: 25rem;
+    width: 30rem;
 }
 
 .card-img-top {
-    max-width: 80% !important;
+    max-width: 100% !important;
 }
 
 .question-footer {
+    border-top:  1px solid rgba(0, 0, 0, 0.4);
     margin-top: 16px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.quiz-answer-card:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
 }
