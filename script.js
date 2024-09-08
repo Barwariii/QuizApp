@@ -54,3 +54,17 @@ function showQuestion() {
     document.getElementById('answer_4').innerHTML = questionContainer['answer_4'];
 
 }
+
+
+function answer(selection) {
+    let questionContainer = questions[currentQuestion];
+    let selectedQuestionNumber = selection.slice(-1);
+
+    if (selectedQuestionNumber == questionContainer['right_answer']) {
+        document.getElementById(selection).parentNode.classList.add('bg-success');
+        console.log('richtige antwort');
+    } else {
+        document.getElementById(selection).parentNode.classList.add('bg-danger');
+        console.log('falshe antwort');
+    }   
+}
