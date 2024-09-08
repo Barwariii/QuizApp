@@ -55,6 +55,7 @@ function showQuestion() {
 
         document.getElementById('end_all_questions').innerHTML = questions.length;
         document.getElementById('amount-of-right-questions').innerHTML = rightQuestions;
+        document.getElementById('header_img').src = './img/win.png'; // change quiz img with end screen win img
     } else {
 
 
