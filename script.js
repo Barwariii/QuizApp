@@ -69,11 +69,13 @@ function answer(selection) {
         document.getElementById(selection).parentNode.classList.add('bg-danger');
         console.log('falshe antwort');
     }   
+    document.getElementById('next_btn').disabled = false;
 }
 
 
 function nextQ() {
     currentQuestion++; //z.B. von 0 auf 1
+    document.getElementById('next_btn').disabled = true; 
     showQuestion();
     resetAnswerBtn();
 }
