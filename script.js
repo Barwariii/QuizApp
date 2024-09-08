@@ -37,6 +37,7 @@ let questions = [
 
 let currentQuestion = 0;
 
+let rightQuestions = 0; // to show the right answer on end screen
 
 function init() {
     document.getElementById('all_questions').innerHTML = questions.length;
@@ -51,6 +52,9 @@ function showQuestion() {
         // TODO: Show End Screen
         document.getElementById('end_screen').style = '';
         document.getElementById('start_Quiz').style = 'display: none';
+
+        document.getElementById('end_all_questions').innerHTML = questions.length;
+        document.getElementById('amount-of-right-questions').innerHTML = rightQuestions;
     } else {
 
 
@@ -75,6 +79,7 @@ function answer(selection) {
 
     if (selectedQuestionNumber == questionContainer['right_answer']) {
         document.getElementById(selection).parentNode.classList.add('bg-success');
+        rightQuestions++;
         console.log('richtige antwort');
     } else {
         document.getElementById(selection).parentNode.classList.add('bg-danger');
