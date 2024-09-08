@@ -75,6 +75,11 @@ let questions = [
 
 
 
+let currentQuestion = 0;
+let rightQuestions = 0; // to show the right answer on end screen
+let audioSuccess = new Audio('audio/success.mp3');
+let audiofail = new Audio('audio/wrong.mp3');
+
 function init() {
     document.getElementById('all_questions').innerHTML = questions.length;
     showQuestion();
@@ -124,11 +129,13 @@ function answer(selection) {
 
     if (selectedQuestionNumber == questionContainer['right_answer']) {
         document.getElementById(selection).parentNode.classList.add('bg-success');
+        audioSuccess.play();
         rightQuestions++;
         console.log('richtige antwort');
     } else {
         document.getElementById(selection).parentNode.classList.add('bg-danger');
         document.getElementById(idOfrightAnswer).parentNode.classList.add('bg-success');
+        audiofail.play();
         console.log('falshe antwort');
     }
     document.getElementById('next_btn').disabled = false;
