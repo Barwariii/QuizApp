@@ -31,13 +31,49 @@ let questions = [
         "answer_4": "Bayern",
         "right_answer": 4
     },
+    {
+        "question": "Welche Stadt ist die Hauptstadt Deutschlands?",
+        "answer_1": "München",
+        "answer_2": "Berlin",
+        "answer_3": "Hamburg",
+        "answer_4": "Frankfurt am Main",
+        "right_answer": 2
+    },
+    {
+        "question": "Welches deutsche Märchen ist weltweit bekannt und wurde von den Brüdern Grimm gesammelt?",
+        "answer_1": "Die kleine Meerjungfrau",
+        "answer_2": "Rotkäppchen",
+        "answer_3": "Pinocchio",
+        "answer_4": "Schneewittchen",
+        "right_answer": 4
+    },
+    {
+        "question": "Welches deutsche Auto ist ein Symbol für Luxus und Leistung?",
+        "answer_1": "Volkswagen Golf",
+        "answer_2": "Mercedes-Benz S-Klasse",
+        "answer_3": "Opel Corsa",
+        "answer_4": "BMW i3",
+        "right_answer": 2
+    },
+    {
+        "question": "Welches deutsche Fest wird jedes Jahr im Oktober gefeiert und ist für seine Biergärten und Trachten bekannt?",
+        "answer_1": "Karneval",
+        "answer_2": "Oktoberfest",
+        "answer_3": "Weihnachtsmarkt",
+        "answer_4": "Sommerfest",
+        "right_answer": 2
+    },
+    {
+        "question": "Welches deutsche Schloss ist eines der bekanntesten weltweit und war einst die Residenz bayerischer Könige?",
+        "answer_1": "Neuschwanstein",
+        "answer_2": "Sanssouci",
+        "answer_3": "Versailles",
+        "answer_4": "Windsor",
+        "right_answer": 1
+    },
 ];
 
 
-
-let currentQuestion = 0;
-
-let rightQuestions = 0; // to show the right answer on end screen
 
 function init() {
     document.getElementById('all_questions').innerHTML = questions.length;
@@ -59,8 +95,8 @@ function showQuestion() {
         document.getElementById('header_img').style.width = "350px";
     } else { //show questions
 
-        let precent = (currentQuestion + 1 ) / questions.length;
-        precent = precent * 100;
+        let precent = (currentQuestion + 1) / questions.length;
+        precent = Math.round(precent * 100);
         document.getElementById('progress_bar').innerHTML = `${precent} %`;
         document.getElementById('progress_bar').style = `width: ${precent}%`;
 
@@ -76,7 +112,7 @@ function showQuestion() {
         document.getElementById('answer_2').innerHTML = questionContainer['answer_2'];
         document.getElementById('answer_3').innerHTML = questionContainer['answer_3'];
         document.getElementById('answer_4').innerHTML = questionContainer['answer_4'];
-        
+
     }
 }
 
@@ -94,14 +130,14 @@ function answer(selection) {
         document.getElementById(selection).parentNode.classList.add('bg-danger');
         document.getElementById(idOfrightAnswer).parentNode.classList.add('bg-success');
         console.log('falshe antwort');
-    }   
+    }
     document.getElementById('next_btn').disabled = false;
 }
 
 
 function nextQ() {
     currentQuestion++; //z.B. von 0 auf 1
-    document.getElementById('next_btn').disabled = true; 
+    document.getElementById('next_btn').disabled = true;
     showQuestion();
     resetAnswerBtn();
 }
@@ -116,4 +152,14 @@ function resetAnswerBtn() {
     document.getElementById('answer_3').parentNode.classList.remove('bg-danger');
     document.getElementById('answer_4').parentNode.classList.remove('bg-success');
     document.getElementById('answer_4').parentNode.classList.remove('bg-danger');
+}
+
+function restartGame(params) {
+    document.getElementById('header_img').src = './img/quiz.png'; // change quiz img with end screen win img
+    document.getElementById('header_img').style.width = "100%";
+    document.getElementById('start_Quiz').style = ''; // able start quiz agian 
+    document.getElementById('end_screen').style = 'display: none'; //disable en screen
+    currentQuestion = 0;
+    rightQuestions = 0;
+    init();
 }

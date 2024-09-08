@@ -67,3 +67,10 @@ body {
 /* .win-tropy img{
     width: 250px;
 } */
+
+.restart-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px 0px 16px 0;
+}
