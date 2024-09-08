@@ -34,6 +34,23 @@ let questions = [
 ];
 
 
+
+let currentQuestion = 0;
+
+
 function init() {
     document.getElementById('all_questions').innerHTML = questions.length;
+    showQuestion();
+}
+
+
+function showQuestion() {
+    let questionContainer = questions[currentQuestion];
+
+    document.getElementById('questiontext').innerHTML = questionContainer['question'];
+    document.getElementById('answer_1').innerHTML = questionContainer['answer_1'];
+    document.getElementById('answer_2').innerHTML = questionContainer['answer_2'];
+    document.getElementById('answer_3').innerHTML = questionContainer['answer_3'];
+    document.getElementById('answer_4').innerHTML = questionContainer['answer_4'];
+
 }
