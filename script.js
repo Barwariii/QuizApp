@@ -45,16 +45,26 @@ function init() {
 
 
 function showQuestion() {
-    let questionContainer = questions[currentQuestion];
 
 
-    document.getElementById('question_number').innerHTML = currentQuestion + 1;
-    document.getElementById('questiontext').innerHTML = questionContainer['question'];
-    document.getElementById('answer_1').innerHTML = questionContainer['answer_1'];
-    document.getElementById('answer_2').innerHTML = questionContainer['answer_2'];
-    document.getElementById('answer_3').innerHTML = questionContainer['answer_3'];
-    document.getElementById('answer_4').innerHTML = questionContainer['answer_4'];
+    if (currentQuestion >= questions.length) {
+        // TODO: Show End Screen
+        document.getElementById('end_screen').style = '';
+        document.getElementById('start_Quiz').style = 'display: none';
+    } else {
 
+
+        let questionContainer = questions[currentQuestion];
+
+
+        document.getElementById('question_number').innerHTML = currentQuestion + 1;
+        document.getElementById('questiontext').innerHTML = questionContainer['question'];
+        document.getElementById('answer_1').innerHTML = questionContainer['answer_1'];
+        document.getElementById('answer_2').innerHTML = questionContainer['answer_2'];
+        document.getElementById('answer_3').innerHTML = questionContainer['answer_3'];
+        document.getElementById('answer_4').innerHTML = questionContainer['answer_4'];
+        
+    }
 }
 
 
