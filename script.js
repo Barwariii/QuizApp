@@ -49,14 +49,22 @@ function showQuestion() {
 
 
     if (currentQuestion >= questions.length) {
-        // TODO: Show End Screen
+        // Show End Screen
         document.getElementById('end_screen').style = '';
         document.getElementById('start_Quiz').style = 'display: none';
 
         document.getElementById('end_all_questions').innerHTML = questions.length;
         document.getElementById('amount-of-right-questions').innerHTML = rightQuestions;
         document.getElementById('header_img').src = './img/win.png'; // change quiz img with end screen win img
-    } else {
+        document.getElementById('header_img').style.width = "350px";
+    } else { //show questions
+
+        let precent = (currentQuestion + 1 ) / questions.length;
+        precent = precent * 100;
+        document.getElementById('progress_bar').innerHTML = `${precent} %`;
+        document.getElementById('progress_bar').style = `width: ${precent}%`;
+
+        console.log('Fortschritt: ', precent)
 
 
         let questionContainer = questions[currentQuestion];

@@ -57,6 +57,13 @@ body {
     margin-bottom: 8px;
 }
 
-.win-tropy img{
-    width: 250px;
+.header-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px 0px 16px 0;
 }
+
+/* .win-tropy img{
+    width: 250px;
+} */
