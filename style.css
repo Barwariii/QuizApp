@@ -42,3 +42,21 @@ body {
 .bg-succes, .bg-danger {
     color: white;
 }
+
+
+#end_screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.end-msg {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.win-tropy img{
+    width: 250px;
+}
